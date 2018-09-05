@@ -10,7 +10,21 @@
         android:id="@+id/btnSelectFile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="125dp"
+        android:layout_marginLeft="126dp"
+        android:layout_marginRight="125dp"
+        android:layout_marginStart="126dp"
+        android:layout_marginTop="16dp"
         android:text="Elegir archivo"
-        tools:layout_editor_absoluteX="148dp"
-        tools:layout_editor_absoluteY="3dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textoArchivo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        android:text="TextView"
+        app:layout_constraintTop_toBottomOf="@+id/btnSelectFile" />
 </android.support.constraint.ConstraintLayout>

@@ -39,7 +39,7 @@ public class MyAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup viewGroup) {
         View v = convertView;
         LayoutInflater layoutInflater = LayoutInflater.from(this.context);
-        v = layoutInflater.inflate(layout,null);
+        v = layoutInflater.inflate(this.layout,null);
 
         Cancion cancionActual = canciones.get(position);
         TextView textViewNombre = (TextView) v.findViewById(R.id.txtNombre);
@@ -52,7 +52,5 @@ public class MyAdapter extends BaseAdapter {
         textViewAnio.setText(Integer.toString(cancionActual.Anio));
 
         return v;
-
-
     }
 }

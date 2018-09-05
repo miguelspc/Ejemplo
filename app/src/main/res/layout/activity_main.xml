@@ -10,6 +10,7 @@
         android:id="@+id/btnBuscar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:layout_below="@+id/txtNombreCancion"
         android:text="Buscar"
@@ -21,6 +22,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:ems="10"
         android:hint="Cancion" />
@@ -30,6 +32,7 @@
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="135dp" />
 
@@ -39,6 +42,7 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/lstResultado"
         android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
         android:layout_marginBottom="-135dp"
         android:text="Da click sobre la canción para agregarla a la playlist" />
 
@@ -48,6 +52,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="212dp"
         android:text="Datos de PlayList" />
@@ -57,6 +62,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
         android:layout_below="@+id/textView2"
         android:text="Nombre: " />
 
@@ -66,6 +72,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView2"
         android:layout_toEndOf="@+id/textView3"
+        android:layout_toRightOf="@+id/textView3"
         android:text="" />
 
     <ListView
@@ -73,6 +80,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
         android:layout_below="@+id/textView3"
         android:minHeight="80dp"/>
 
@@ -82,6 +90,7 @@
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/btnBuscar"
         android:layout_toStartOf="@+id/btnBuscar"
+        android:layout_toLeftOf="@+id/btnBuscar"
         android:text="Limpiar" />
 
     <View
@@ -89,6 +98,7 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
         android:layout_below="@+id/lstResultado"
         android:background="?android:attr/listDivider" />
 
