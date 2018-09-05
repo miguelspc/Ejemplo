@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:minHeight="60dp" android:layout_height="60dp">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:src="@android:drawable/star_big_on" />
+
+    <TextView
+        android:id="@+id/txtNombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/imageView"
+        android:layout_toRightOf="@id/imageView"
+        android:text="aa" />
+
+    <TextView
+        android:id="@+id/txtAutor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="center"
+        android:layout_toEndOf="@+id/imageView"
+        android:layout_toRightOf="@id/imageView"
+        android:text="aa" />
+
+    <TextView
+        android:id="@+id/txtDuracion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@+id/imageView"
+        android:layout_toRightOf="@id/imageView"
+        android:text="aaa"/>
+
+    <TextView
+        android:id="@+id/txtAnio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toEndOf="@+id/txtAutor"
+        android:layout_toRightOf="@id/txtAutor"
+        android:text="aaa" />
+
+</RelativeLayout>
