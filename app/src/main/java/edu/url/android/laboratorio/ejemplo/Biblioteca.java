@@ -20,7 +20,5 @@ public class Biblioteca {
         Canciones.put("Hey Jude",new Cancion("Hey Jude",2.5,"The Beatles",1968));
         Canciones.put("Smells Like Teen Spirit",new Cancion("Smells Like Teen Spirit",2.5,"Nirvana",1991));
         Canciones.put("What'd I Say",new Cancion("What'd I Say",2.5,"Ray Charles",1959));
-
-
     }
 }

@@ -57,13 +57,11 @@ public class MainActivity extends AppCompatActivity {
     {
         txtNombreCancion.setText("");
         lstResultado.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, new ArrayList<String>()));
-
-
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_main,menu );
+        getMenuInflater().inflate(R.menu.menu_main, menu);
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -78,9 +76,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void about() {
-        Intent intent = new Intent(this,FilesActivity.class);
+        Intent intent = new Intent(this, FilesActivity.class);
         startActivity(intent);
-
     }
 
     @OnClick(R.id.btnBuscar)
@@ -90,9 +87,8 @@ public class MainActivity extends AppCompatActivity {
             List<String> Resultados = new ArrayList<>();
             Resultados.add(result.Nombre + ". Duracion " + result.Duracion.toString() + ". Autor: " + result.Autor + ". Año: " + result.Anio);
 
-            ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, Resultados);
             // Enlazamos el adaptador con nuestro List View
-            lstResultado.setAdapter(adapter);
+            lstResultado.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, Resultados));
 
             Toast.makeText(MainActivity.this, "Canción encontrada.", Toast.LENGTH_LONG).show();
         } else {
@@ -106,9 +102,9 @@ public class MainActivity extends AppCompatActivity {
         TextView abc = (TextView)view;
         String [] pedazos = abc.getText().toString().split("\\.");
         objPlayList.Canciones.add(objBiblioteca.Canciones.get(pedazos[0].trim()));
-        MyAdapter adapter = new MyAdapter(this, R.layout.list_item, objPlayList.Canciones);
+
         // Enlazamos el adaptador con nuestro List View
-        lstPlayList.setAdapter(adapter);
+        lstPlayList.setAdapter(new MyAdapter(this, R.layout.list_item, objPlayList.Canciones));
         Toast.makeText(MainActivity.this, pedazos[0] + " agregada a " + objPlayList.Nombre, Toast.LENGTH_LONG).show();
     }
 }
