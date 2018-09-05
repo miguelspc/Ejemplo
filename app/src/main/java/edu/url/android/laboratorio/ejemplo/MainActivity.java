@@ -4,7 +4,9 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.ContextMenu;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
@@ -65,6 +67,8 @@ public class MainActivity extends AppCompatActivity {
         return super.onCreateOptionsMenu(menu);
     }
 
+
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if(item.getItemId()==R.id.action_about)
@@ -97,6 +101,32 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+        super.onCreateContextMenu(menu, v, menuInfo);
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_playlist_item,menu);
+    }
+
+    @Override
+    public boolean onContextItemSelected(MenuItem item) {
+        AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
+        switch (item.getItemId()){
+            case R.id.action_remove_from_playlist:
+                EliminarCancion(info.position);
+                Toast.makeText(this,"Canción eliminada de "+objPlayList.Nombre,Toast.LENGTH_LONG).show();
+                return true;
+                default:
+                    return super.onContextItemSelected(item);
+        }
+    }
+
+    public boolean EliminarCancion(int position){
+        objPlayList.Canciones.remove(position);
+        lstPlayList.setAdapter(new MyAdapter(this, R.layout.list_item, objPlayList.Canciones));
+        return true;
+    }
+
     @OnItemClick(R.id.lstResultado)
     public void onItemClicked(AdapterView<?> adapterView, View view, int position, long id) {
         TextView abc = (TextView)view;
@@ -105,6 +135,7 @@ public class MainActivity extends AppCompatActivity {
 
         // Enlazamos el adaptador con nuestro List View
         lstPlayList.setAdapter(new MyAdapter(this, R.layout.list_item, objPlayList.Canciones));
+        registerForContextMenu(lstPlayList);
         Toast.makeText(MainActivity.this, pedazos[0] + " agregada a " + objPlayList.Nombre, Toast.LENGTH_LONG).show();
     }
 }
